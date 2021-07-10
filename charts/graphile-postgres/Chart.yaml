@@ -26,3 +26,7 @@ dependencies: # A list of the chart requirements (optional)
   - name: postgresql
     version: 10.5.1
     repository: https://charts.bitnami.com/bitnami
+
+maintainers:
+  - name: Nicholas Romero
+    email: ncrmro@jtco.io
