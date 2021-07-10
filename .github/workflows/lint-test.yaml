@@ -26,4 +26,4 @@ jobs:
         helm repo add bitnami https://charts.bitnami.com/bitnami
 
     - name: Run chart-testing (lint)
-      run: ct lint --all
+      run: ct lint --all --validate-maintainers=false
