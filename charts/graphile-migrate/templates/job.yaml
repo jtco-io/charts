@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "graphile-migrate.fullname" . }}
+  labels:
+    {{- include "graphile-migrate.labels" . | nindent 4 }}
+spec:
+  # TODO not available in k3s yet, will need to manually clean up jobs
+  ttlSecondsAfterFinished: 600 #60000
+  template:
+    spec:
+      imagePullSecrets:
+        - name: gitlab-registry-credentials
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.credentialSecrets.owner }}
+                  key: databaseURI
+            - name: DATABASE_AUTHENTICATOR
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.credentialSecrets.authenticator }}
+                  key: username
+            - name: DATABASE_VISITOR
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.credentialSecrets.visitor }}
+                  key: username
+      restartPolicy: Never
