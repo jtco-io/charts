@@ -22,4 +22,4 @@ jobs:
       uses: helm/chart-testing-action@v2.0.1
 
     - name: Run chart-testing (lint)
-      run: ct lint
+      run: ct lint --all
