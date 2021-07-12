@@ -1,19 +1,25 @@
 # Helm Charts
 
-First we need to download the dependency charts
+Download the dependency charts
 
 ```bash
 helm dependency update charts/graphile-postgres
 ```
 
-Next lets build the charts
+Build the charts
 
 ```bash
 helm package --destination ./dist charts/*
 ```
 
-Finally lets create our index
+Create the index file.
 
-```
+```bash
 helm repo index --url https://charts.jtco.io .
+```
+
+Add the repo locally
+
+```bash
+helm repo add jtco https://charts.jtco.io 
 ```
