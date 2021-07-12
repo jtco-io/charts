@@ -1,0 +1,63 @@
+apiVersion: v1
+entries:
+  graphile-migrate:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-07-11T20:21:31.267779-05:00"
+    description: A Helm chart to create a job to run graphile/migrate migrations.
+    digest: ff0625a7da60a3b6bf6a11d1f80e0dc9bc9898db83a67b98f8ef2187588d70eb
+    maintainers:
+    - email: ncrmro@jtco.io
+      name: Nicholas Romero
+    name: graphile-migrate
+    type: application
+    urls:
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-migrate-0.1.0.tgz
+    version: 0.1.0
+  graphile-postgraphile:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-07-11T20:21:31.268264-05:00"
+    description: A Helm chart to create a GraphQL endpoint using Postgraphile
+    digest: 675d9e29c1dcae56e558d23534217b75f1bad63cfd3c2661385ad4d99aa9ff90
+    maintainers:
+    - email: ncrmro@jtco.io
+      name: Nicholas Romero
+    name: graphile-postgraphile
+    type: application
+    urls:
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-postgraphile-0.1.0.tgz
+    version: 0.1.0
+  graphile-postgres:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-07-11T20:21:31.272743-05:00"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.5.1
+    description: Postgres chart with postgres-grapqhl secrets
+    digest: 1f4707907b961ef669aa1d565d311a9339e018102e643dc8e8627283a9915482
+    maintainers:
+    - email: ncrmro@jtco.io
+      name: Nicholas Romero
+    name: graphile-postgres
+    type: application
+    urls:
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-postgres-0.1.0.tgz
+    version: 0.1.0
+  graphile-worker:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-07-11T20:21:31.273103-05:00"
+    description: A Helm chart for graphile/worker.
+    digest: 90eb48e23ce84cd6d357c9cf1a4036090ff6c844f16f11571f839ef0e1c34b52
+    maintainers:
+    - email: ncrmro@jtco.io
+      name: Nicholas Romero
+    name: graphile-worker
+    type: application
+    urls:
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-worker-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-07-11T20:21:31.267294-05:00"
