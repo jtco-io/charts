@@ -1,6 +1,6 @@
 apiVersion: v2
-name: postgraphile
-description: A Helm chart for Kubernetes
+name: graphile-postgraphile
+description: A Helm chart to create a GraphQL endpoint using Postgraphile
 
 # A chart can be either an 'application' or a 'library' chart.
 #
