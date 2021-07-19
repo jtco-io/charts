@@ -1,8 +1,8 @@
 name: Lint
-on:
-  push:
-    paths:
-    - 'charts/**'
+on: ['push']
+#  push:
+#    paths:
+#    - 'charts/**'
 
 jobs:
   lint-test:
