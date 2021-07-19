@@ -6,13 +6,15 @@ metadata:
     {{- include "graphile-migrate.labels" . | nindent 4 }}
 spec:
   # TODO not available in k3s yet, will need to manually clean up jobs
-  ttlSecondsAfterFinished: 600 #60000
+  ttlSecondsAfterFinished: 86400 # one day
   template:
     spec:
+      {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
-        - name: gitlab-registry-credentials
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Chart.Name }}-{{ .Values.image.tag }}"
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"

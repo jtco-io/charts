@@ -3,6 +3,19 @@ entries:
   graphile-migrate:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-07-18T20:25:10.108459-05:00"
+    description: A Helm chart to create a job to run graphile/migrate migrations.
+    digest: 563e59e4ac409308039f63e46cbbc2ab92c2425019df6777e2b7d82d13fa7fdb
+    maintainers:
+    - email: ncrmro@jtco.io
+      name: Nicholas Romero
+    name: graphile-migrate
+    type: application
+    urls:
+    - https://charts.jtco.io/dist/graphile-migrate-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-07-11T20:21:31.267779-05:00"
     description: A Helm chart to create a job to run graphile/migrate migrations.
     digest: ff0625a7da60a3b6bf6a11d1f80e0dc9bc9898db83a67b98f8ef2187588d70eb
