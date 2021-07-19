@@ -22,7 +22,8 @@ version: 0.1.0
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 1.16.0
 
-dependencies: # A list of the chart requirements (optional)
+# A list of the chart requirements (optional)
+dependencies:
   - name: postgresql
     version: 10.5.1
     repository: https://charts.bitnami.com/bitnami
