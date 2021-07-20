@@ -15,7 +15,7 @@ helm package --destination ./dist charts/*
 Create the index file.
 
 ```bash
-helm repo index --url https://charts.jtco.io .
+helm repo index --merge index.yaml --url https://charts.jtco.io .
 ```
 
 Add the repo locally
