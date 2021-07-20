@@ -3,16 +3,29 @@ entries:
   graphile-migrate:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-19T23:02:55.316865-05:00"
+    created: "2021-07-20T12:35:55.551631-05:00"
     description: A Helm chart to create a job to run graphile/migrate migrations.
-    digest: 12d11b47a10497c43e8b90a49df490cfac745ccfc6c378471c617c8c5589f839
+    digest: 69a3a240276b777d9e6c57d37e29705e6e44ae47a4234c8973e8c8992daa9dbb
     maintainers:
     - email: ncrmro@jtco.io
       name: Nicholas Romero
     name: graphile-migrate
     type: application
     urls:
-    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-migrate-0.3.0.tgz
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-migrate-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-07-20T12:35:55.550322-05:00"
+    description: A Helm chart to create a job to run graphile/migrate migrations.
+    digest: 11298e78a173ba0bd37fae6196c2e110f086ace8b1320133dde1bc3b7e4ba0af
+    maintainers:
+    - email: ncrmro@jtco.io
+      name: Nicholas Romero
+    name: graphile-migrate
+    type: application
+    urls:
+    - https://charts.jtco.io/dist/graphile-migrate-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
@@ -43,9 +56,9 @@ entries:
   graphile-postgraphile:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-19T23:02:55.319157-05:00"
+    created: "2021-07-20T12:35:55.55231-05:00"
     description: A Helm chart to create a GraphQL endpoint using Postgraphile
-    digest: ad12c65fd984f2914bfb2e47178c9eb5bd5c46196c78377e6ab897b41a7e9e37
+    digest: 716eb0ecf3713e6b5ba11c0c1abb09fba30b252ce3bf27b563b65a6aa5bb0505
     maintainers:
     - email: ncrmro@jtco.io
       name: Nicholas Romero
@@ -57,13 +70,13 @@ entries:
   graphile-postgres:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-19T23:02:55.326395-05:00"
+    created: "2021-07-20T12:35:55.556686-05:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
       version: 10.5.1
     description: Postgres chart with postgres-grapqhl secrets
-    digest: 874c83a409fb7f0755585b20a7b810a4029722b90f268633bbf0b45945972a88
+    digest: 7a6577bd7bc99016a533824b5e50eea03a3ba91228fecfadc521d0bdd09f06f1
     maintainers:
     - email: ncrmro@jtco.io
       name: Nicholas Romero
@@ -75,9 +88,9 @@ entries:
   graphile-worker:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-19T23:02:55.326844-05:00"
+    created: "2021-07-20T12:35:55.557138-05:00"
     description: A Helm chart for graphile/worker.
-    digest: fd5e21e3e2731d249ce1fe16b75a7434d72cb7bbe6dd0cd80e4946bcc928eb2e
+    digest: 14421c6d964f8cf5329819a18d758dfb753e6acc656b4e064efcc9def595e810
     maintainers:
     - email: ncrmro@jtco.io
       name: Nicholas Romero
@@ -86,4 +99,4 @@ entries:
     urls:
     - https://charts.jtco.io/dist/graphile-worker-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-19T23:02:55.316073-05:00"
+generated: "2021-07-20T12:35:55.549489-05:00"

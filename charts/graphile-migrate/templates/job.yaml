@@ -1,14 +1,10 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ include "graphile-migrate.fullname" . }}
+  name: {{ include "graphile-migrate.fullname" . }}-{{ .Values.image.tag }}
   labels:
     {{- include "graphile-migrate.labels" . | nindent 4 }}
-  annotations:
-    "helm.sh/hook-delete-policy": before-hook-creation
 spec:
-  # TODO not available in k3s yet, will need to manually clean up jobs
-  ttlSecondsAfterFinished: 86400 # one day
   template:
     spec:
       {{- with .Values.imagePullSecrets }}
