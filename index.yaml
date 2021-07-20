@@ -3,6 +3,19 @@ entries:
   graphile-migrate:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-07-19T23:02:55.316865-05:00"
+    description: A Helm chart to create a job to run graphile/migrate migrations.
+    digest: 12d11b47a10497c43e8b90a49df490cfac745ccfc6c378471c617c8c5589f839
+    maintainers:
+    - email: ncrmro@jtco.io
+      name: Nicholas Romero
+    name: graphile-migrate
+    type: application
+    urls:
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-migrate-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-07-18T20:25:10.108459-05:00"
     description: A Helm chart to create a job to run graphile/migrate migrations.
     digest: 563e59e4ac409308039f63e46cbbc2ab92c2425019df6777e2b7d82d13fa7fdb
@@ -30,47 +43,47 @@ entries:
   graphile-postgraphile:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-11T20:21:31.268264-05:00"
+    created: "2021-07-19T23:02:55.319157-05:00"
     description: A Helm chart to create a GraphQL endpoint using Postgraphile
-    digest: 675d9e29c1dcae56e558d23534217b75f1bad63cfd3c2661385ad4d99aa9ff90
+    digest: ad12c65fd984f2914bfb2e47178c9eb5bd5c46196c78377e6ab897b41a7e9e37
     maintainers:
     - email: ncrmro@jtco.io
       name: Nicholas Romero
     name: graphile-postgraphile
     type: application
     urls:
-    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-postgraphile-0.1.0.tgz
+    - https://charts.jtco.io/dist/graphile-postgraphile-0.1.0.tgz
     version: 0.1.0
   graphile-postgres:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-11T20:21:31.272743-05:00"
+    created: "2021-07-19T23:02:55.326395-05:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
       version: 10.5.1
     description: Postgres chart with postgres-grapqhl secrets
-    digest: 1f4707907b961ef669aa1d565d311a9339e018102e643dc8e8627283a9915482
+    digest: 874c83a409fb7f0755585b20a7b810a4029722b90f268633bbf0b45945972a88
     maintainers:
     - email: ncrmro@jtco.io
       name: Nicholas Romero
     name: graphile-postgres
     type: application
     urls:
-    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-postgres-0.1.0.tgz
+    - https://charts.jtco.io/dist/graphile-postgres-0.1.0.tgz
     version: 0.1.0
   graphile-worker:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-11T20:21:31.273103-05:00"
+    created: "2021-07-19T23:02:55.326844-05:00"
     description: A Helm chart for graphile/worker.
-    digest: 90eb48e23ce84cd6d357c9cf1a4036090ff6c844f16f11571f839ef0e1c34b52
+    digest: fd5e21e3e2731d249ce1fe16b75a7434d72cb7bbe6dd0cd80e4946bcc928eb2e
     maintainers:
     - email: ncrmro@jtco.io
       name: Nicholas Romero
     name: graphile-worker
     type: application
     urls:
-    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-worker-0.1.0.tgz
+    - https://charts.jtco.io/dist/graphile-worker-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-11T20:21:31.267294-05:00"
+generated: "2021-07-19T23:02:55.316073-05:00"

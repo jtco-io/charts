@@ -4,6 +4,8 @@ metadata:
   name: {{ include "graphile-migrate.fullname" . }}
   labels:
     {{- include "graphile-migrate.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook-delete-policy": before-hook-creation
 spec:
   # TODO not available in k3s yet, will need to manually clean up jobs
   ttlSecondsAfterFinished: 86400 # one day
@@ -14,7 +16,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       containers:
-        - name: {{ .Chart.Name }}-{{ .Values.image.tag }}"
+        - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
