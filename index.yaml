@@ -65,7 +65,7 @@ entries:
     name: graphile-postgraphile
     type: application
     urls:
-    - https://charts.jtco.io/dist/graphile-postgraphile-0.1.0.tgz
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-postgraphile-0.1.0.tgz
     version: 0.1.0
   graphile-postgres:
   - apiVersion: v2
