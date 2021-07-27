@@ -101,9 +101,9 @@ entries:
     version: 0.1.0
   nextjs:
   - apiVersion: v2
-    created: "2021-07-27T11:46:17.097854-05:00"
+    created: "2021-07-27T11:49:57.27258-05:00"
     description: A Helm chart for for nextjs applications
-    digest: fea8b522f01e63dc6a4986d7e0c86f15f9a54801a0fb7e55a94511c2b8f83753
+    digest: b4f311d0d95023f643e63e7aa54397ca1f6c321008a1946a0b849d2f9afc349c
     name: nextjs
     type: application
     urls:
