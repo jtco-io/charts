@@ -101,6 +101,15 @@ entries:
     version: 0.1.0
   nextjs:
   - apiVersion: v2
+    created: "2021-07-27T14:28:28.410083-05:00"
+    description: A Helm chart for for nextjs applications
+    digest: 07919511590207b8f167910007051fe8c7ce24102939ba3010984b65f4aec4d4
+    name: nextjs
+    type: application
+    urls:
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/nextjs-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2021-07-27T11:49:57.27258-05:00"
     description: A Helm chart for for nextjs applications
     digest: b4f311d0d95023f643e63e7aa54397ca1f6c321008a1946a0b849d2f9afc349c
@@ -109,4 +118,4 @@ entries:
     urls:
     - https://github.com/jtco-io/charts/releases/download/0.1.0/nextjs-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-27T11:46:17.090026-05:00"
+generated: "2021-07-27T14:28:28.409085-05:00"
