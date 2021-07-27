@@ -25,7 +25,7 @@ entries:
     name: graphile-migrate
     type: application
     urls:
-    - https://charts.jtco.io/dist/graphile-migrate-0.3.0.tgz
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-migrate-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
@@ -83,7 +83,7 @@ entries:
     name: graphile-postgres
     type: application
     urls:
-    - https://charts.jtco.io/dist/graphile-postgres-0.1.0.tgz
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-postgres-0.1.0.tgz
     version: 0.1.0
   graphile-worker:
   - apiVersion: v2
@@ -97,6 +97,16 @@ entries:
     name: graphile-worker
     type: application
     urls:
-    - https://charts.jtco.io/dist/graphile-worker-0.1.0.tgz
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/graphile-worker-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-20T12:35:55.549489-05:00"
+  nextjs:
+  - apiVersion: v2
+    created: "2021-07-27T11:41:53.280307-05:00"
+    description: A Helm chart for for nextjs applications
+    digest: 6c3abe93a7f2fdb17089a2daba282a9fb57943483298df48c19ee733dd6434c2
+    name: nextjs
+    type: application
+    urls:
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/nextjs-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-07-27T11:41:53.242347-05:00"
