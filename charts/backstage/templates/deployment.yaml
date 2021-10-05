@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "backstage.fullname" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "backstage.labels" . | nindent 4 }}
 spec:
