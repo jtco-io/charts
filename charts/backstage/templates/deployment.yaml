@@ -51,6 +51,21 @@ spec:
           {{- if .Values.extraEnv }}
 {{ toYaml .Values.extraEnv | indent 8 }}
           {{- end }}
+          {{- if .Values.postgresql.enabled }}
+          - name: POSTGRES_HOST
+            value: postgres-postgresql
+          - name: POSTGRES_PORT
+            value: "5432"
+          - name: POSTGRES_USER
+            value: postgres
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.postgresql.existingSecret}}
+                key: postgresql-password
+          - name: POSTGRES_DATABASE
+            value: {{ .Values.postgresql.postgresqlDatabase }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:

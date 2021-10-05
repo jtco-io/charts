@@ -81,3 +81,16 @@ affinity: {}
 extraEnv: []
 
 appConfig: {}
+
+postgresql:
+  # -- Whether to use the Postgres chart
+  enabled: true
+  existingSecret: postgres-root-credentials
+  persistence:
+    enabled: true
+    existingClaim: backstage-postgres-data
+  volumePermissions:
+    # -- Automatically fix permissions
+    enabled: true
+  # -- The name backstage installs to.
+  postgresqlDatabase: backstage
