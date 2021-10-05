@@ -14,8 +14,8 @@ spec:
       {{- include "backstage.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-    {{- with .Values.podAnnotations }}
       annotations:
+    {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
     {{- end }}
         checksum/config: {{ include (print $.Template.BasePath "/app-config.yaml") . | sha256sum }}
