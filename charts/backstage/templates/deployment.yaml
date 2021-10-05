@@ -47,6 +47,10 @@ spec:
             httpGet:
               path: /
               port: http
+          env:
+          {{- if .Values.extraEnv }}
+{{ toYaml .Values.extraEnv | indent 8 }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
