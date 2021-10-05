@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "backstage.fullname" . }}-app-config
+data:
+  app-config.yaml: {{ required "A valid .Values.appConfig entry required!" .Values.appConfig }}
+
