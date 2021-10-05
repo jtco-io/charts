@@ -79,3 +79,5 @@ tolerations: []
 affinity: {}
 
 extraEnv: []
+
+appConfig: {}
