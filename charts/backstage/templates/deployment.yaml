@@ -41,11 +41,11 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: /api/healthcheck
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /api/healthcheck
               port: http
           env:
           {{- if .Values.extraEnv }}
