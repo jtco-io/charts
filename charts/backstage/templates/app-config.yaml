@@ -4,6 +4,5 @@ metadata:
   name: {{ include "backstage.fullname" . }}-app-config
   namespace: {{ .Release.Namespace }}
 data:
-  app-config.yaml: |-
-{{ required "A valid .Values.appConfig entry required!" .Values.appConfig | indent 4 }}
+  app-config.yaml: {{ required "A valid .Values.appConfig entry required!" .Values.appConfig | indent 4 }}
 
