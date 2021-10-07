@@ -53,7 +53,7 @@ spec:
           {{- end }}
           {{- if .Values.postgresql.enabled }}
           - name: POSTGRES_HOST
-            value: postgres-postgresql
+            value: {{ include "backstage.fullname" . }}-postgres-postgresql
           - name: POSTGRES_PORT
             value: "5432"
           - name: POSTGRES_USER
