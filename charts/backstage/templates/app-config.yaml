@@ -4,5 +4,5 @@ metadata:
   name: {{ include "backstage.fullname" . }}-app-config
   namespace: {{ .Release.Namespace }}
 data:
-  app-config.yaml: -|
+  app-config.yaml: |-
 {{ toYaml .Values.appConfig | indent 4 }}
