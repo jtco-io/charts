@@ -79,7 +79,7 @@ tolerations: []
 
 affinity: {}
 
-# -- Cant be used pass variables to your app-config.yaml such as Gitlab or Github tokens
+# -- Can be used pass variables to your app-config.yaml such as Gitlab or Github tokens
 extraEnv: []
 
 # -- Set your Backstage config here, see [example](EXAMPLE-CONFIG.md)
