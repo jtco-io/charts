@@ -15,7 +15,7 @@ A Helm chart to deploy Backstage
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| appConfig | object | `{}` | Set your Backstage config here, see [example](#EXAMPLE-CONFIG.md) |
+| appConfig | object | `{}` | Set your Backstage config here, see [example](EXAMPLE-CONFIG.md) |
 | autoscaling.enabled | bool | `false` |  |
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |

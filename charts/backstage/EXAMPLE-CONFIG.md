@@ -1,4 +1,9 @@
+# Example app-config.yaml
 
+Rather than setting these values in your docker image we pass them into a configmap automatically rolling your helm 
+release's pods anytime you change these values.
+
+See the [Backstage docs](https://backstage.io/docs/conf/writing#file-format) for more information.
 
 ```yaml
   app:
