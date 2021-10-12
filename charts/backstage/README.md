@@ -20,7 +20,7 @@ A Helm chart to deploy Backstage
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| extraEnv | list | `[]` | Cant be used pass variables to your app-config.yaml such as Gitlab or Github tokens |
+| extraEnv | list | `[]` | Can be used pass variables to your app-config.yaml such as Gitlab or Github tokens |
 | fullnameOverride | string | `""` |  |
 | image | object | `{"pullPolicy":"IfNotPresent","repository":"","tag":""}` | You will need to switch this out with your custom image and tag |
 | imagePullSecrets | list | `[]` |  |
