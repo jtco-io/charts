@@ -1,5 +1,21 @@
 apiVersion: v1
 entries:
+  backstage:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-10-12T11:59:13.626462-05:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.12.*
+    description: A Helm chart to deploy Backstage
+    digest: 5bd9ec231ca44b3fad5ee717b7e7eafd38f21ef1dfb090ba4910946c74788149
+    name: backstage
+    type: application
+    urls:
+    - https://github.com/jtco-io/charts/releases/download/0.1.0/backstage-0.13.0.tgz
+    version: 0.13.0
   graphile-migrate:
   - apiVersion: v2
     appVersion: 1.16.0
