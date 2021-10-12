@@ -1,6 +1,6 @@
 # backstage
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
+![Version: 0.13.0](https://img.shields.io/badge/Version-0.13.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
 
 A Helm chart to deploy Backstage
 
@@ -15,16 +15,14 @@ A Helm chart to deploy Backstage
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| appConfig | object | `{}` |  |
+| appConfig | object | `{}` | Set your Backstage config here, see [example](#EXAMPLE-CONFIG.md) |
 | autoscaling.enabled | bool | `false` |  |
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| extraEnv | list | `[]` |  |
+| extraEnv | list | `[]` | Cant be used pass variables to your app-config.yaml such as Gitlab or Github tokens |
 | fullnameOverride | string | `""` |  |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"nginx"` |  |
-| image.tag | string | `""` |  |
+| image | object | `{"pullPolicy":"IfNotPresent","repository":"","tag":""}` | You will need to switch this out with your custom image and tag |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.enabled | bool | `false` |  |
@@ -36,15 +34,15 @@ A Helm chart to deploy Backstage
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | postgresql.enabled | bool | `true` | Whether to use the Postgres chart |
-| postgresql.existingSecret | string | `"postgres-root-credentials"` |  |
+| postgresql.existingSecret | string | `"postgres-root-credentials"` | A secret containing a key `postgresql-password` |
 | postgresql.persistence.enabled | bool | `true` |  |
-| postgresql.persistence.existingClaim | string | `"backstage-postgres-data"` |  |
-| postgresql.postgresqlDatabase | string | `"backstage"` | The name backstage installs to. |
+| postgresql.persistence.existingClaim | string | `"backstage-postgres-data"` | Where postgres should store its data |
+| postgresql.postgresqlDatabase | string | `"backstage"` | The database name backstage installs to. |
 | postgresql.volumePermissions.enabled | bool | `true` | Automatically fix permissions |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
-| service.port | int | `80` |  |
+| service.port | int | `7000` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |

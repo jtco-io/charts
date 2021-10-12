@@ -4,8 +4,9 @@
 
 replicaCount: 1
 
+# -- You will need to switch this out with your custom image and tag
 image:
-  repository: nginx
+  repository: ""
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -78,19 +79,23 @@ tolerations: []
 
 affinity: {}
 
+# -- Cant be used pass variables to your app-config.yaml such as Gitlab or Github tokens
 extraEnv: []
 
+# -- Set your Backstage config here, see [example](#EXAMPLE-CONFIG.md)
 appConfig: {}
 
 postgresql:
   # -- Whether to use the Postgres chart
   enabled: true
+  # -- A secret containing a key `postgresql-password`
   existingSecret: postgres-root-credentials
   persistence:
     enabled: true
+    # -- Where postgres should store its data
     existingClaim: backstage-postgres-data
   volumePermissions:
     # -- Automatically fix permissions
     enabled: true
-  # -- The name backstage installs to.
+  # -- The database name backstage installs to.
   postgresqlDatabase: backstage
