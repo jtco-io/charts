@@ -21,12 +21,12 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.credentialSecrets.root }}
                   key: databaseURI
-            - name: DATABASE_AUTHENTICATOR
+            - name: DATABASE_AUTHENTICATOR_ROLE
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.credentialSecrets.authenticator }}
                   key: username
-            - name: DATABASE_VISITOR
+            - name: DATABASE_VISITOR_ROLE
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.credentialSecrets.visitor }}
@@ -41,12 +41,12 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.credentialSecrets.owner }}
                   key: databaseURI
-            - name: DATABASE_AUTHENTICATOR
+            - name: DATABASE_AUTHENTICATOR_ROLE
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.credentialSecrets.authenticator }}
                   key: username
-            - name: DATABASE_VISITOR
+            - name: DATABASE_VISITOR_ROLE
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.credentialSecrets.visitor }}
