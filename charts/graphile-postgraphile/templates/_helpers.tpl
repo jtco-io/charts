@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "postgres-graphql.name" -}}
+{{- define "graphile-postgraphile.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "postgres-graphql.fullname" -}}
+{{- define "graphile-postgraphile.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "postgres-graphql.chart" -}}
+{{- define "graphile-postgraphile.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "postgres-graphql.labels" -}}
-helm.sh/chart: {{ include "postgres-graphql.chart" . }}
-{{ include "postgres-graphql.selectorLabels" . }}
+{{- define "graphile-postgraphile.labels" -}}
+helm.sh/chart: {{ include "graphile-postgraphile.chart" . }}
+{{ include "graphile-postgraphile.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "postgres-graphql.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "postgres-graphql.name" . }}
+{{- define "graphile-postgraphile.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "graphile-postgraphile.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "postgres-graphql.serviceAccountName" -}}
+{{- define "graphile-postgraphile.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "postgres-graphql.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "graphile-postgraphile.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
