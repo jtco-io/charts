@@ -11,12 +11,30 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      initContainers:
+        - name: init
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ["yarn", "workspace", "database", "mig", "run", "migrations/scripts/afterReset.sql"]
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.credentialSecrets.root }}
+                  key: databaseURI
+            - name: DATABASE_AUTHENTICATOR
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.credentialSecrets.authenticator }}
+                  key: username
+            - name: DATABASE_VISITOR
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.credentialSecrets.visitor }}
+                  key: username
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: migrations
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: [ "yarn", "workspace", "database" , "graphile-migrate", "migrate" ]
           env:
             - name: DATABASE_URL
               valueFrom:

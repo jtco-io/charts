@@ -11,6 +11,7 @@ fullnameOverride: ""
 databaseURISecret: postgres-database-owner-url-credentials
 
 credentialSecrets:
+  root: postgres-root-credentials
   owner: postgres-owner-credentials
   authenticator: postgres-authenticator-credentials
   visitor: postgres-visitor-credentials
