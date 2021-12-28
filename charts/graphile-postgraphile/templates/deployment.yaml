@@ -46,7 +46,7 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.databaseCredentialSecrets.owner }}
                   key: databaseURI
-            - name: DATABASE_OWNER_URL
+            - name: DATABASE_AUTHENTICATOR_URL
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.databaseCredentialSecrets.authenticator }}
