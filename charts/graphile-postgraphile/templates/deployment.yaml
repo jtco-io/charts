@@ -46,8 +46,8 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.databaseCredentialSecrets.authenticator }}
                   key: databaseURI
-            - name: JWT_SECRET
+            - name: SECRET
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.jwtSecret }}
+                  name: {{ .Values.backendSecret }}
                   key: secret
