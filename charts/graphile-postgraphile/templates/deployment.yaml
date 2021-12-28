@@ -46,8 +46,8 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.databaseCredentialSecrets.owner }}
                   key: databaseURI
-            - name: DATABASE_AUTHENTICATOR_ROLE
-              value: {{ required "A valid .Values.authenticatorRole entry required!" .Values.authenticatorRole }}
+            - name: DATABASE_VISITOR_ROLE
+              value: {{ required "A valid .Values.visitorRole entry required!" .Values.visitorRole }}
             - name: DATABASE_AUTHENTICATOR_URL
               valueFrom:
                 secretKeyRef:
