@@ -31,15 +31,16 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          command: [ "yarn", "workspace", "web" , "start" ]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 3000
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /api/healthcheck
-              port: 3000
+              port: {{ .Values.service.port }}
             initialDelaySeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
