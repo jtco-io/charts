@@ -47,7 +47,7 @@ spec:
                   name: {{ .Values.databaseCredentialSecrets.owner }}
                   key: databaseURI
             - name: DATABASE_AUTHENTICATOR_ROLE
-              value: {{ required "A valid .Values.authenticator_role entry required!" .Values.authenticator_role }}
+              value: {{ required "A valid .Values.authenticatorRole entry required!" .Values.authenticatorRole }}
             - name: DATABASE_AUTHENTICATOR_URL
               valueFrom:
                 secretKeyRef:
