@@ -11,6 +11,7 @@ image:
   tag: "latest"
 
 databaseCredentialSecrets:
+  owner: postgres-owner-credentials
   authenticator: postgres-authenticator-credentials
 
 imagePullSecrets: []
