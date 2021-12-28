@@ -46,6 +46,11 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.databaseCredentialSecrets.owner }}
                   key: databaseURI
+            - name: DATABASE_AUTHENTICATOR_ROLE
+              valueFrom:
+                secretKeyRef:
+                  name: {{ required "A valid .Values.authenticator_role entry required!" .Values.authenticator_role }}
+                  key: databaseURI
             - name: DATABASE_AUTHENTICATOR_URL
               valueFrom:
                 secretKeyRef:
@@ -56,3 +61,6 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.backendSecret }}
                   key: secret
+          {{- with .Values.env }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
