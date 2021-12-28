@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "postgres-graphql.fullname" . }}-test-connection"
+  name: "{{ include "graphile-postgraphile.fullname" . }}-test-connection"
   labels:
-    {{- include "postgres-graphql.labels" . | nindent 4 }}
+    {{- include "graphile-postgraphile.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test-success
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "postgres-graphql.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "graphile-postgraphile.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never
