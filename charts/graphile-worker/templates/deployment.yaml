@@ -27,6 +27,7 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          command: [ "yarn", "workspace", "worker" , "start" ]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: NODE_ENV
