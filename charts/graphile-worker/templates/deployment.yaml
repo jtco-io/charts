@@ -37,3 +37,6 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.databaseCredentialSecrets.owner }}
                   key: databaseURI
+          {{- with .Values.env }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
