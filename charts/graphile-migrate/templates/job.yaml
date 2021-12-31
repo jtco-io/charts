@@ -34,7 +34,7 @@ spec:
       containers:
         - name: migrations
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command: [ "yarn", "workspace", "database" , "graphile-migrate", "migrate" ]
+          command: {{ .Values.migrationCommand }}
           env:
             - name: DATABASE_URL
               valueFrom:
