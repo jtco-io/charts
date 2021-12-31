@@ -4,7 +4,7 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
-migrationCommand: [ "yarn", "workspace", "database" , "graphile-migrate", "migrate" ]
+migrationCommand: ["yarn", "workspace", "database" , "graphile-migrate", "migrate"]
 
 imagePullSecrets: []
 nameOverride: ""

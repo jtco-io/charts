@@ -34,7 +34,10 @@ spec:
       containers:
         - name: migrations
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command: {{ .Values.migrationCommand }}
+          {{- with .Values.migrationCommand }}
+          command:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           env:
             - name: DATABASE_URL
               valueFrom:
