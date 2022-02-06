@@ -1,0 +1,20 @@
+# Default values for pg-gql-next.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  image:
+    repository: nginx
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: ""
+  postgres:
+    enabled: true
+  migrations:
+    enabled: true
+  backend:
+    enabled: true
+  worker:
+    enabled: true
+  web:
+    enabled: true
